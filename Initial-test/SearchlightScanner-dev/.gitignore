@@ -1,0 +1,10 @@
+**/__pycache__/
+/jetson-inference
+/backend/images/*
+default_settings.json
+current_settings.json
+targets.csv
+images/*
+models/*
+.DS_Store
+settings.json
