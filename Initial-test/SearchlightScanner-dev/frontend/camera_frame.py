@@ -695,7 +695,7 @@ class MainFrame(tk.Frame):
     def on_confidence_change(self, value):
         """Update threshold when slider changes"""
         selected_category = self.category_var.get()
-        clamped_value = max(10, value)
+        clamped_value = max(2, value)
         threshold = clamped_value / 100  # Convert from percentage to decimal
         shared_labels.set_threshold(selected_category, threshold)
         self.confidence_label.config(text=f"CONFIDENCE: {int(value)}%")

@@ -87,11 +87,11 @@ class SharedLabels:
 
     def get_threshold(self, label):
         # print(f"Getting threshold for {label}: {self.thresholds.get(label, 0.5)}")
-        return max(0.1, self.thresholds.get(label, 0.5))
+        return max(0.02, self.thresholds.get(label, 0.5))
 
     def set_threshold(self, label, threshold):
         # print(f"Setting threshold for {label} to {threshold}")
-        threshold = max(0.1, threshold)
+        threshold = max(0.02, threshold)
         self.thresholds[label] = threshold
         self.constants_manager.set_constant("category_thresholds", self.thresholds)
         self.notify_observers(label, threshold)

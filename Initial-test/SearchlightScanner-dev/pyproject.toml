@@ -1,0 +1,28 @@
+[tool.ruff]
+target-version = "py38"
+
+line-length = 80
+
+[tool.ruff.lint]
+select = [
+    "E", # error codes
+    "W", # warning codes
+    "F", # import errors, undefined variables, unused imports
+    "I", # import organization and sorting
+    "N", # pep naming conventions
+    "UP", # suggests f-strings and typing where necessary
+    "B", # common bug catcher
+    "SIM", # simplification suggestions
+    "T20", # finds print statements 
+    "ARG", # unused arguments
+    "PTH", # pathlib over os.path
+]
+
+exclude = [
+    ".git",
+    "old test",
+    "DET0",
+    ".ruff_cache",
+    "__pycache__",
+    
+]
