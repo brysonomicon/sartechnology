@@ -1,3 +1,4 @@
+import os.path
 import tkinter as tk
 from tkinter import font as tkFont
 from tkinter import PhotoImage
@@ -10,6 +11,7 @@ from .shared_labels_controller import shared_labels
 from .application_current_settings_route import current_settings_route
 from constants.constantsmanager import ConstantsManager
 
+LOUDSPEAKER_ICON_PATH = "LoudSpeakerIcon.png"
 
 class SettingsFrame2(tk.Frame):
 
@@ -239,8 +241,9 @@ class SettingsFrame2(tk.Frame):
         self.operator_alerts_toggle_frame.grid(row=1, column=0, padx=10, pady=10, sticky="ew")
         self.operator_alerts_toggle_frame.grid_propagate(False)
 
-        image = Image.open("/home/sar/SearchlightScannerV4/Initial-test/SearchlightScanner-dev/LoudSpeakerIcon.png")
-        resized_image = image.resize((50, 50), Image.ANTIALIAS)
+        # image = Image.open("/home/sar/SearchlightScannerV4/Initial-test/SearchlightScanner-dev/LoudSpeakerIcon.png")
+        image = Image.open(os.path.abspath(LOUDSPEAKER_ICON_PATH))
+        resized_image = image.resize((50, 50))
         self.operator_icon = ImageTk.PhotoImage(resized_image)
         self.operator_toggle_label = tk.Label(
             self.operator_alerts_toggle_frame,

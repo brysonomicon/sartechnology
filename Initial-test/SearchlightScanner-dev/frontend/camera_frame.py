@@ -1,7 +1,6 @@
 import tkinter as tk
 from PIL import Image, ImageTk
 from tkinter import font as tkFont, ttk
-import jetson_utils
 from PIL import Image
 from backend.led_controller import LEDController
 
@@ -17,7 +16,7 @@ from .shared_segmentation_controller import shared_segmentation
 import numpy as np
 import datetime
 import cv2
-from jetson_utils import cudaFromNumpy, cudaToNumpy
+from jetson_wrapper.jetson_wrapper import cudaFromNumpy, cudaToNumpy
 
 
 class MainFrame(tk.Frame):

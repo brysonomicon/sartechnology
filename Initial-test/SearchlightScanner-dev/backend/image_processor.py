@@ -1,5 +1,4 @@
-from jetson_inference import detectNet
-from jetson_utils import (cudaToNumpy, cudaFromNumpy)
+from jetson_wrapper.jetson_wrapper import (cudaToNumpy, cudaFromNumpy, detectNet)
 from .scanner_detection import ScannerDetection
 from PIL import Image
 import tempfile
@@ -55,8 +54,11 @@ class ImageProcessor:
             print(f"Error loading model: {e}")
             raise
         finally:
-            os.unlink(temp_label_file.name)
-            os.unlink(temp_color_file.name)
+            try:
+                os.unlink(temp_label_file.name)
+                os.unlink(temp_color_file.name)
+            except Exception as e:
+                print(f"Error deleting temporary files: {e}")
 
     def filter_detections(self, detections):
         filtered = []

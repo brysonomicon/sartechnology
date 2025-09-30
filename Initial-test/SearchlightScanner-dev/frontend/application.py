@@ -144,7 +144,8 @@ class Application(tk.Tk):
             print(f"✅ Using model at: {custom_model}")
             return str(custom_model)
 
-        raise FileNotFoundError(f"❌ Model not found at: {custom_model}")
+        # UNCOMMENT THIS LATER
+        # raise FileNotFoundError(f"❌ Model not found at: {custom_model}")
 
 
 if __name__ == "__main__":
